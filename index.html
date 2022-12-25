@@ -10,11 +10,92 @@
   </head>
   <body>
 
-    <div id="aboutMeDiv">
-      <h1>Welcome to my Projects Page</h1>
-      <h2>About me</h2>
+    <div class="container">
+      <div id="aboutMeDiv">
+        <h1 class='text-center m-3'>Chan Kuang Wen</h1>
+        <hr>
+        <h3 class="text-center m-3">Chemistry Teacher | EdTech</h3>
+        <p class="text-center m-3">This is my page where I showcase my Tech Portfolio.<br>
+        Feel free to reach out at my LinkedIn account if you want to collaborate on projects.</p>
+        <div class="text-center">
+          <a href="https://www.linkedin.com/in/chan-kuang-wen/" target="_blank" rel="noopener noreferrer"><img src="LinkedIn logo full.png" alt=”Image” height="30px" width=auto></a>
+        </div>  
+        <hr>
+      </div>
     </div>
 
-	<script></script>
+    <div class="container">
+      <div id="titleDiv">
+        <h3 class='text-center'>Portfolio</h3>
+      </div>
+      <div id="displayDiv"></div>
+
+	<script>
+
+    // Initialise all elements here
+    var displayDiv = document.getElementById('displayDiv')
+
+    // Store all content here (duplicate each dictionary for new entry)
+    let allContent = [
+      {
+        title: "Test title",
+        description: "Test description",
+        demoURL: "https://www.linkedin.com/in/chan-kuang-wen/",
+        githubURL: "https://www.linkedin.com/in/chan-kuang-wen/"
+      },
+      {
+        title: "Test title 2",
+        description: "Test description 2",
+        demoURL: "https://github.com/kwen1510/webpages",
+        githubURL: "https://www.linkedin.com/in/chan-kuang-wen/"
+      },
+      {
+        title: "Test title 2",
+        description: "Test description 2",
+        demoURL: "https://github.com/kwen1510/webpages",
+        githubURL: "https://www.linkedin.com/in/chan-kuang-wen/"
+      },
+      {
+        title: "Test title 2",
+        description: "Test description 2",
+        demoURL: "https://github.com/kwen1510/webpages",
+        githubURL: "https://www.linkedin.com/in/chan-kuang-wen/"
+      },
+      {
+        title: "Test title 2",
+        description: "Test description 2",
+        demoURL: "https://github.com/kwen1510/webpages",
+        githubURL: "https://www.linkedin.com/in/chan-kuang-wen/"
+      },
+    ]
+
+    // Clear displayDiv
+    displayDiv.innerHTML = ''
+    
+    var innerHTML = '<div class="row row-cols-3">'
+
+    allContent.forEach((dictionary, index) => {
+      innerHTML += `
+      <div class="col mt-3">
+        <div class="card border-dark h-100 style="width: 18rem;">
+          <div class="card-body text-center">
+            <h5 class="card-title">${dictionary['title']}</h5>
+            <p class="card-text">${dictionary['description']}</p>
+            <a href="${dictionary['githubURL']}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary mt-1 mb-1"><img src="GitHub logo.png" alt=”Image” height="20px" width=auto> GitHub URL</a>
+            <a href="${dictionary['demoURL']}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary mt-1 mb-1"><img src="LinkedIn logo small.png" alt=”Image” height="19px" width=auto> Demo URL</a>
+          </div>
+        </div>
+      </div>
+      `
+    });
+
+    // Close up the card columns Div
+    innerHTML += "</div>"
+
+    console.log(innerHTML)
+
+    displayDiv.innerHTML = innerHTML
+
+  </script>
   </body>
 </html>
